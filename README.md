@@ -3,7 +3,7 @@ A small repo for custom themes that I've created for my terminal.
 
 I use [iTerm2](https://iterm2.com/) and [Oh My ZSH](http://ohmyz.sh/), which each allow for custom themes. I forked the [Cobalt2 theme](https://github.com/wesbos/Cobalt2-iterm) from [Wes Bos](https://wesbos.com), then modified it to align roughly with [Northwestern University's branding guidelines](https://www.northwestern.edu/brand/).
 
-For the Oh My ZSH theme to work, you will also need to install the [patched powerline font](https://github.com/powerline/fonts)
+For the Oh My ZSH theme to work, you will also need to install the [patched powerline font](https://github.com/powerline/fonts).
 
 
 ## Step-by-step installation
