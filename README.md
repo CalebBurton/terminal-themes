@@ -26,6 +26,6 @@ For the Oh My ZSH theme to work, you will also need to install the [patched powe
 
 5. In iTerm2 access the **Preferences** pane on the **Profiles** tab
     - Under the **Colors** tab import the `go-cats.itermcolors` file via the **Load Presets** drop-down
-    - Under the **Text** tab change the font for both types (Regular and Non-ASCII) to **Inconsolata for Powerline**
+    - Under the **Text** tab change the font for both types (Regular and Non-ASCII) to 16pt **Inconsolata for Powerline**
 
 6. Refresh ZSH by typing `source ~/.zshrc` on the command line
