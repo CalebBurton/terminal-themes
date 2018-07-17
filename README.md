@@ -7,25 +7,27 @@ For the Oh My ZSH theme to work, you will also need to install the [patched powe
 
 
 ## Step-by-step installation
+1. Install iTerm2 and Oh My ZSH using the links above
 
 1. Drop the `go-cats.zsh-theme` file in to the `~/.oh-my-zsh/themes/` directory
 
-2. Open up your ZSH preferences at `~/.zshrc` and change the theme variable to `ZSH_THEME="go-cats"`
+1. Open up your ZSH preferences at `~/.zshrc` and change the theme variable to `ZSH_THEME="go-cats"`
 
-3. Install Powerline and necessary fonts, one way is using PIP
+1. Install Powerline and necessary fonts, one way is using PIP
     ```
     pip install --user powerline-status
     ```
 
-4. Install all necessary fonts by cloning the git repository
+1. Install all necessary fonts by cloning the git repository
     ```
     git clone https://github.com/powerline/fonts
     cd fonts
     ./install.sh
     ```
 
-5. In iTerm2 access the **Preferences** pane on the **Profiles** tab
+1. In iTerm2 access the **Preferences** pane on the **Profiles** tab
     - Under the **Colors** tab import the `go-cats.itermcolors` file via the **Load Presets** drop-down
-    - Under the **Text** tab change the font for both types (Regular and Non-ASCII) to 16pt **Inconsolata for Powerline**
+    - Under the **Text** tab change the font for both types (Regular and Non-ASCII) to **Inconsolata for Powerline (16pt)**
+    - These don't necessarily relate to the theme, but In the **Text** tab I also like to change the cursor to a blinking vertical bar and in the **General** tab I turn off the "Confirm Quit" options
 
-6. Refresh ZSH by typing `source ~/.zshrc` on the command line
+1. Refresh ZSH by typing `source ~/.zshrc` on the command line
