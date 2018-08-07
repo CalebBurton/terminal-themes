@@ -90,10 +90,6 @@ prompt_status() {
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
 
-#prompt_timestamp() {
-#PROMPT='%D %T % %{$reset_color%}'
-#}
-
 ## Main prompt
 build_prompt() {
   RETVAL=$?
