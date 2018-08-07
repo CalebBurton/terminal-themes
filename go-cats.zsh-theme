@@ -49,7 +49,7 @@ prompt_context() {
   local user=`whoami`
 
   if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)✝"
+    prompt_segment black default "%(!.%{%F{yellow}%}.)%T" #default used ✝ instead of %T
   fi
 }
 
@@ -82,12 +82,17 @@ prompt_dir() {
 prompt_status() {
   local symbols
   symbols=()
+
   [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
   [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
 
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
+
+#prompt_timestamp() {
+#PROMPT='%D %T % %{$reset_color%}'
+#}
 
 ## Main prompt
 build_prompt() {
