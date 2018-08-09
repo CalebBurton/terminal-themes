@@ -97,21 +97,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+source $HOME/.Aliases # Store all aliases in their own file
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-alias api-go='cd ~/Documents/GitHub/Node-API && make serve'
-alias api-pqa='cd ~/Documents/GitHub/Node-API && make pqa'
-alias cdn-build='cd ~/Documents/GitHub/CDN/global && nvm use 6.2.1 && make build'
-alias cdn-go='cd ~/Documents/GitHub/CDN/global && nvm use 6.2.1 && grunt serve'
-alias cupcake-go='cd ~/Documents/GitHub/cupcake && make serve'
-alias cupcake-pqa='cd ~/Documents/GitHub/cupcake && make pqa'
-alias signup-go='cd ~/Documents/GitHub/signup && make serve'
-alias signup-pqa='cd ~/Documents/GitHub/signup && make pqa'
-alias wa-go='cd ~/Documents/GitHub/Node-Webadmin && make serve'
-alias wa-pqa='cd ~/Documents/GitHub/Node-Webadmin && make pqa'
-
-alias switch-mariadb='brew unlink mysql && brew link mariadb'
-alias switch-mysql='brew unlink mariadb && brew link mysql'
