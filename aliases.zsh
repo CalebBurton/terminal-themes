@@ -9,12 +9,22 @@ alias signup-pqa='cd ~/Documents/GitHub/signup && make pqa'
 alias wa-go='cd ~/Documents/GitHub/Node-Webadmin && make serve'
 alias wa-pqa='cd ~/Documents/GitHub/Node-Webadmin && make pqa'
 
-alias switch-mariadb='brew unlink mysql && brew link mariadb'
-alias switch-mysql='brew unlink mariadb && brew link mysql'
+alias pm2='./node_modules/pm2/bin/pm2'
 
-# alias mysql='/usr/local/opt/mariadb@10.2/bin/mysql'
+function api-token () {
+    json=$(curl -X POST -H "Cache-Control: no-cache" -H "Content-Type: application/x-www-form-urlencoded" -d 'username=qa1&password=qa1&ttl=1200000000' "http://0.0.0.0:3000/api/tech/login?u")
+    id=$(echo $json | grep -o '[^"]\{64\}')
+    RED='\033[0;31m'
+    NOCOLOR='\033[0m'
+    echo -e "\n\t${RED}$id${NOCOLOR}\n"
+}
 
-#alias api-token=`curl -X POST -H "Cache-Control: no-cache" -H "Content-Type: application/x-www-form-urlencoded" -d 'username=qa1&password=qa1&ttl=1200000000' "http://0.0.0.0:3000/api/tech/login?u" | grep "\"id\":\"\w*\""`
+function stop-all () {
+    pm2 kill
+    kill -9 $(ps -aucaleb.burton | grep "[g]runt" | awk '{print $2}')
+    echo "\nAll pm2 and grunt processes killed.\n"
+}
 
-#alias kill-grunt=`kill -9 $(ps -aucaleb.burton | grep "[g]runt" | awk '{print $2}')`
-alias zshrc='source ~/.zshrc'
+alias reload='source ~/.zshrc'
+alias zshrc='code ~/.zshrc'
+alias aliases='code ~/aliases.zsh'
