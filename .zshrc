@@ -2,8 +2,8 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/caleb.burton/.oh-my-zsh"
-export PATH="/Users/caleb.burton/.nvm/versions/node/v8.11.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/usr/local/share/npm/bin/"
+export ZSH="$HOMEn/.oh-my-zsh"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/usr/local/share/npm/bin/"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -109,5 +109,12 @@ if command -v brew >/dev/null 2>&1; then
 	[ -f $(brew --prefix)/etc/profile.d/z.sh ] && source $(brew --prefix)/etc/profile.d/z.sh
 fi
 
+if [ -d "$HOME/.nvm/versions/node/v8.11.1/bin" ] ; then
+  export PATH="$HOME/.nvm/versions/node/v8.11.1/bin:$PATH"
+fi
+if [ -d "/usr/local/opt/sqlite/bin" ] ; then
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
-export PATH="/usr/local/opt/mariadb@10.2/bin:$PATH"
+fi
+if [ -d "/usr/local/opt/mariadb@10.2/bin" ] ; then
+  export PATH="/usr/local/opt/mariadb@10.2/bin:$PATH"
+fi
