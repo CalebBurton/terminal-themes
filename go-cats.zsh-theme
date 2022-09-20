@@ -60,12 +60,18 @@ prompt_git() {
     ZSH_THEME_GIT_PROMPT_DIRTY='±'
     dirty=$(parse_git_dirty)
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
+    formatted_ref="${ref/refs\/heads\// }$dirty"
     if [[ -n $dirty ]]; then
       prompt_segment yellow black
     else
       prompt_segment green black
     fi
-    echo -n "${ref/refs\/heads\// }$dirty"
+    if [[ ${#formatted_ref} -gt 25 ]]; then
+      trimmed_ref="${formatted_ref:0:22}..."
+    else
+      trimmed_ref=$formatted_ref
+    fi
+    echo -n "$trimmed_ref"
   fi
 }
 
