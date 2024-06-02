@@ -10,7 +10,7 @@
 # A few utility functions to make it easy and re-usable to draw segmented prompts
 
 CURRENT_BG='NONE'
-SEGMENT_SEPARATOR=''
+SEGMENT_SEPARATOR='▶' #⊳⏵▶ powerline version is 
 
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
@@ -49,7 +49,7 @@ prompt_context() {
   local user=`whoami`
 
   if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)%T" #default used ✝ instead of %T
+    prompt_segment black default "%(!.%{%F{yellow}%}.)%T" # default used ✝ instead of %T
   fi
 }
 
@@ -60,7 +60,7 @@ prompt_git() {
     ZSH_THEME_GIT_PROMPT_DIRTY='±'
     dirty=$(parse_git_dirty)
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
-    formatted_ref="${ref/refs\/heads\// }$dirty"
+    formatted_ref="${ref/refs\/heads\//⊛ }$dirty" # powerline version is 
     if [[ -n $dirty ]]; then
       prompt_segment yellow black
     else
